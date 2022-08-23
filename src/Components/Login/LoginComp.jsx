@@ -42,7 +42,7 @@ const LoginComp = () => {
           }}
           required
           onChange={(e) =>
-            setCradentials({ ...cradentials, username: e.target.value })
+            setCradentials({ ...cradentials, email: e.target.value })
           }
         />
         <TextField
