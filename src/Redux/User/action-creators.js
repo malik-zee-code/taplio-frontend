@@ -19,7 +19,7 @@ export const LoginUser = (cradentials, navigate) => {
             })
           );
           localStorage.setItem("token", data.data.data.token);
-          navigate("/home");
+          navigate("/newBoard");
           return "Success!";
         },
       },
@@ -57,7 +57,7 @@ export const RegisterUser = (cradentials, navigate) => {
             })
           );
           localStorage.setItem("token", data.data.data.token);
-          navigate("/home");
+          navigate("/newBoard");
           return "Success!";
         },
       },

@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        subscription: "url('https://app.taplio.com/bg.svg')",
+      },
+    },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };
