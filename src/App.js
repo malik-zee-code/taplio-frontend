@@ -9,11 +9,13 @@ import Subscription from "./Pages/Subscription";
 import QueueComp from "./Components/Queue/QueueComp";
 import ViralComp from "./Components/Viral/ViralComp";
 import SearchModeComp from "./Components/SearchMode/SearchModeComp";
+import Header from "./Components/Header/Header";
 
 const App = () => {
   return (
     <div className="App w-full h-screen">
       <ToastContainer />
+      <Header />
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

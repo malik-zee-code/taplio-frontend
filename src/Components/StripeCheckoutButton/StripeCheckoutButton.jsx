@@ -1,14 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import StripeCheckout from "react-stripe-checkout";
 
 const StripeCheckoutButton = () => {
   const priceForStripe = 9888 * 100;
+  const navigate = useNavigate();
   const PublishKey =
     "pk_test_51InJLfLL6214pXMBnZ18A2gn0aC1Rkkf4nOJVAiw0L7TN9JUoWfGAnCRNLC3tscrihV5501pwLJ46px0bHIdZplP00KXHi4Qjw";
 
   const onToken = (token) => {
     console.log(token);
-    alert("Payment Seccessfull");
+    // alert("Payment Seccessfull");
+    navigate("/home/queue");
   };
 
   return (
