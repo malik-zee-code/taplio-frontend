@@ -3,7 +3,7 @@ import React from "react";
 
 const QueueComp = () => {
   return (
-    <div className="flex flex-col w-full h-full">
+    <div className="flex flex-col w-[80%]  h-full px-32">
       <div className="flex w-full items-center">
         <span className="text-xl text-black font-semibold">My Feed</span>
         <div className="ml-auto">

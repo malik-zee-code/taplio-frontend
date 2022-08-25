@@ -6,6 +6,10 @@ module.exports = {
       backgroundImage: {
         subscription: "url('https://app.taplio.com/bg.svg')",
       },
+      screens: {
+        md: "960px",
+        lg: "1680px",
+      },
     },
   },
   plugins: [require("daisyui")],
