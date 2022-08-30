@@ -20,7 +20,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/newBoard" element={<Subscription />} />
-        <Route path="/cntlinkdIn" element={<LinkedIn />} />
+        <Route path="/cntlinkdin" element={<LinkedIn />} />
         <Route path="/home" element={<Home />}>
           <Route path="queue" element={<QueueComp />} />
           <Route path="viral" element={<ViralComp />} />

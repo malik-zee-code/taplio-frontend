@@ -4,10 +4,12 @@ import Sidebar from "../Components/Sidebar";
 
 const Home = () => {
   return (
-    <div className="w-full min-h-full bg-white  flex">
-      <Sidebar />
-      <HomeComp />
-    </div>
+    <>
+      <div className="w-full min-h-full bg-white  flex">
+        <Sidebar />
+        <HomeComp />
+      </div>
+    </>
   );
 };
 

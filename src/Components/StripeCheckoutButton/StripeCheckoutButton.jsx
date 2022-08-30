@@ -10,7 +10,6 @@ const StripeCheckoutButton = () => {
 
   const onToken = (token) => {
     console.log(token);
-    // alert("Payment Seccessfull");
     navigate("/home/queue");
   };
 
