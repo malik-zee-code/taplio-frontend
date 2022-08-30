@@ -3,12 +3,6 @@ import { toast } from "react-toastify";
 import { PostAction } from "./Posts";
 
 const api = "http://localhost:3002/py/script";
-const token = localStorage.getItem("token");
-const config = {
-  headers: {
-    "x-auth-token": token,
-  },
-};
 export const fetchPosts = (data, navigate) => {
   return async (dispatch) => {
     dispatch(
@@ -18,6 +12,12 @@ export const fetchPosts = (data, navigate) => {
         error: false,
       })
     );
+    const token = localStorage.getItem("token");
+    const config = {
+      headers: {
+        "x-auth-token": token,
+      },
+    };
 
     //first get the linkedIn cradentials of the user of taplio
     const getLinkedIn = axios.get(

@@ -101,15 +101,15 @@ const LinkedIncomp = () => {
           <span className="text-red-600"> Note:</span> Your Login information
           isn't stored. Feel free to connect your account
         </p>
-        <a
+        <button
           onClick={handleSubmit}
-          href="#my-modal-2"
+          
           className={`btn ${
             isLoading && "loading"
           } bg-black  px-4 py-3 rounded-md no-animation w-full text-white font-semibold mt-auto `}
         >
           Continue
-        </a>
+        </button>
       </div>
     </div>
   );
