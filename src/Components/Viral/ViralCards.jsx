@@ -6,13 +6,13 @@ import Rephrase from "../Rephrase/Rephrase";
 
 const ViralCards = ({ date, author, likes, avatar, post, id }) => {
   const [toggleRephrase, settoggleRephrase] = useState();
-  const [data, setData] = useState({});
+  const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [Rephrased, setRephrased] = useState();
 
   const handleSubmit = () => {
-    setData({ ...data, numberOfResults: 0 });
-    setData({ ...data, phrase: post });
+    data.numberOfResults = 0;
+    data.phrase = post;
     setIsLoading(true);
     console.log(data);
     axios
