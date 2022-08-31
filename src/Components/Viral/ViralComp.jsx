@@ -8,14 +8,18 @@ import { fetchPosts } from "../../Redux/Post/action-creators";
 import Loading from "../../UI/Loader/Loading";
 
 const ViralComp = () => {
-  const [data, setData] = useState();
+  const [data, setData] = useState({
+    keyword: "",
+    time: "",
+  });
   const viralPosts = useSelector((state) => state.Post.viralPost);
   const isLoading = useSelector((state) => state.Post.isLoading);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const Submithandler = () => {
+  const Submithandler = (e) => {
+    e.preventDefault();
     dispatch(fetchPosts(data, navigate));
   };
 
@@ -39,39 +43,41 @@ const ViralComp = () => {
           Our AI engine selected this for you
         </p>
         <button className="underline">Edit my personalized feed</button>
-        <div className="mt-10 w-full flex border-b pb-7">
+        <form
+          className="mt-10 w-full flex border-b pb-7"
+          onSubmit={Submithandler}
+        >
           <input
+            required
             type="text"
             placeholder="Keyword"
             className="input bg-white text-slate-700 input-bordered w-full max-w-xs"
             onChange={(e) => setData({ ...data, keyword: e.target.value })}
           />
 
-          <FormControl sx={{ marginLeft: "70px" }}>
+          <FormControl sx={{ marginLeft: "70px" }} required>
             <InputLabel variant="standard" htmlFor="uncontrolled-native">
               Time
             </InputLabel>
             <NativeSelect
-              defaultValue={"24"}
-              inputProps={{
-                name: "time",
-                id: "uncontrolled-native",
-              }}
+              defaultValue={"DEFAULT"}
+              required
               onChange={(e) => setData({ ...data, time: e.target.value })}
             >
+              <option value={"DEFAULT"} disabled>
+                -- Select --{" "}
+              </option>
+
               <option value={"24"}>24 Hours</option>
               <option value={"week"}>Week</option>
               <option value={"month"}>Month</option>
             </NativeSelect>
           </FormControl>
 
-          <button
-            className="btn btn-success text-white ml-auto no-animation hover:bg-green-500"
-            onClick={Submithandler}
-          >
+          <button className="btn btn-success text-white ml-auto no-animation hover:bg-green-500">
             Search
           </button>
-        </div>
+        </form>
 
         <>
           {isLoading ? (
@@ -81,14 +87,16 @@ const ViralComp = () => {
           ) : (
             <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-20 gap-3  ">
               {viralPosts?.map((p, i) => (
-                <ViralCards
-                  key={i}
-                  author={p.Author}
-                  likes={p.Likes}
-                  date={p.Date}
-                  avatar={p.Avatar}
-                  post={p.Post}
-                />
+                <div key={i}>
+                  <ViralCards
+                    id={i}
+                    author={p.Author}
+                    likes={p.Likes}
+                    date={p.Date}
+                    avatar={p.Avatar}
+                    post={p.Post}
+                  />
+                </div>
               ))}
             </div>
           )}

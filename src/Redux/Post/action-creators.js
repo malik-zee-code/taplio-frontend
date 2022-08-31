@@ -2,9 +2,10 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { PostAction } from "./Posts";
 
-const api = "http://localhost:3002/py/script";
+const api = `${process.env.REACT_APP_API}/py/script`;
 export const fetchPosts = (data, navigate) => {
   return async (dispatch) => {
+    console.log(data);
     dispatch(
       PostAction.getPosts({
         viralPost: [],
@@ -21,7 +22,7 @@ export const fetchPosts = (data, navigate) => {
 
     //first get the linkedIn cradentials of the user of taplio
     const getLinkedIn = axios.get(
-      `${process.env.REACT_APP_API}/linkedIn`,
+      `${process.env.REACT_APP_API}/api/v1/linkedIn`,
       config
     );
 

@@ -25,7 +25,7 @@ const LinkedIncomp = () => {
 
     axios
       .post(
-        `${process.env.REACT_APP_API}/linkedIn`,
+        `${process.env.REACT_APP_API}/api/v1/linkedIn`,
         {
           LinkedInemail: cradentials.email,
           LinkedInPassword: cradentials.password,
@@ -103,7 +103,6 @@ const LinkedIncomp = () => {
         </p>
         <button
           onClick={handleSubmit}
-          
           className={`btn ${
             isLoading && "loading"
           } bg-black  px-4 py-3 rounded-md no-animation w-full text-white font-semibold mt-auto `}

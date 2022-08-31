@@ -2,7 +2,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { UserActions } from "./UserSlice";
 
-const api = process.env.REACT_APP_API;
+const api = `${process.env.REACT_APP_API}/api/v1`;
 export const LoginUser = (cradentials, navigate) => {
   return async (dispatch) => {
     toast.promise(axios.post(`${api}/user/login`, cradentials), {
