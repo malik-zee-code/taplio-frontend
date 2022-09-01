@@ -10,7 +10,7 @@ const Rephrase = ({ toggle, setToggle, post }) => {
         toggle ? "right-0" : "-right-full"
       }`}
     >
-    <h2 className="text-2xl text-black  font-semibold">Shedule Your Post.</h2>
+      <h2 className="text-2xl text-black  font-semibold">Shedule Your Post.</h2>
       <div className="flex flex-col w-full h-full items-center mt-20">
         <textarea
           className="textarea text-black bg-white w-full border-2 border-slate-300"
