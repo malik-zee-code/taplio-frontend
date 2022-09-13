@@ -68,7 +68,7 @@ const ViralComp = () => {
                 -- Select --{" "}
               </option>
 
-              <option value={"24"}>24 Hours</option>
+              <option value={"24h"}>24 Hours</option>
               <option value={"week"}>Week</option>
               <option value={"month"}>Month</option>
             </NativeSelect>
@@ -85,7 +85,7 @@ const ViralComp = () => {
               <Loading />
             </div>
           ) : (
-            <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-20 gap-3  ">
+            <div className="w-full grid grid-cols-1 md:grid-cols-2  mt-20 gap-3  ">
               {viralPosts?.map((p, i) => (
                 <div key={i}>
                   <ViralCards
